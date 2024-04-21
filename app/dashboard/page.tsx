@@ -1,4 +1,4 @@
-import CreateDiaryForm from "@/components/dashboard/CreateDiaryForm";
+import CreateDiaryForm from "@/components/auth/CreateDiaryForm";
 import Wrapper from "@/components/global/Wrapper";
 import React from "react";
 

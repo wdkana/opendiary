@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 
 type ParamsProps = {
-  title: string;
+  title?: string;
   children?: ReactElement;
 };
 
