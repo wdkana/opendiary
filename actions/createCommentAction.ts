@@ -16,14 +16,14 @@ export const createCommentAction = async (formData: FormData): Promise<Redirect>
     const data: IComments = { comment_id, avatar, email, username, content }
 
     //! Memeriksa komen terahir terlebih dahulu
-    const getComment = await supabase.from("diary").select("comments").eq("id", diary_id).single()
+    const getComment = await supabase.from("diaries").select("comments").eq("id", diary_id).single()
 
     const existingComment: Array<IComments> = getComment.data?.comments || []
 
     //! tambahkan komen baru ke object comment sebelumnya yang ada di database
     const newComment = [...existingComment, data]
 
-    await supabase.from("diary").update({ comments: newComment }).eq("id", diary_id)
+    await supabase.from("diaries").update({ comments: newComment }).eq("id", diary_id)
 
     redirect(`/diary/${diary_id}`)
 }

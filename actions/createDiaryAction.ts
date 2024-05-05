@@ -11,7 +11,7 @@ export const createDiaryAction = async (formData: FormData): Promise<Redirect> =
 
     const data: IDiary = { content, email, username, avatar }
 
-    await supabase.from("diary").insert(data)
+    await supabase.from("diaries").insert(data)
 
     redirect("/dashboard/my-diary")
 };

@@ -8,7 +8,7 @@ type ParamsProps = {
 
 const CommentList = async ({ diary_id }: ParamsProps) => {
   const { data, error } = await supabase
-    .from("diary")
+    .from("diaries")
     .select("comments")
     .eq("id", diary_id)
     .single();

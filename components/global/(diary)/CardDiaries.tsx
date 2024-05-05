@@ -4,7 +4,7 @@ import { supabase } from "@/utils/supabase";
 
 const CardDiaries = async (): Promise<React.ReactElement> => {
   const { data, error } = await supabase
-    .from("diary")
+    .from("diaries")
     .select()
     .order("created_at", { ascending: false });
 

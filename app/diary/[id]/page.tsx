@@ -13,7 +13,7 @@ type ParamsProps = {
 
 const page = async ({ params }: ParamsProps) => {
   const { data, error } = await supabase
-    .from("diary")
+    .from("diaries")
     .select()
     .eq("id", params.id)
     .single();

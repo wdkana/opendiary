@@ -8,7 +8,7 @@ const page = async (): Promise<React.ReactElement> => {
   const { email } = await getUserData();
 
   const { data, error } = await supabase
-    .from("diary")
+    .from("diaries")
     .select()
     .order("created_at", { ascending: false })
     .eq("email", email);
